@@ -5,6 +5,8 @@ from typing import Annotated
 
 from app.models import *
 from sqlalchemy import insert, select, update
+
+from app.models.category import Category
 from app.schemas import CreateCategory
 
 from slugify import slugify

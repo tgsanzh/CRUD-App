@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from app.routers import category
 from app.routers import products
-
+from app.routers import auth
 
 
 app = FastAPI()
@@ -11,6 +11,8 @@ app = FastAPI()
 def welcome():
     return {"message": "My App"}
 
+
+app.include_router(auth.router)
 app.include_router(category.router)
 app.include_router(products.router)
 
